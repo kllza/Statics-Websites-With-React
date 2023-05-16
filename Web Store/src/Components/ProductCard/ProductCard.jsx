@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const ProductCard = ({ product, onAddToCart }) => {
   const handleAddToCart = () => {
     onAddToCart(product.id, product.name, product.price);
@@ -17,7 +19,10 @@ const ProductCard = ({ product, onAddToCart }) => {
           <span className="ml-2">${product.price}</span>
         </div>
         <div className="mt-4">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" onClick={handleAddToCart}>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+            onClick={handleAddToCart}
+          >
             Añadir al Carrito
           </button>
         </div>
@@ -25,5 +30,16 @@ const ProductCard = ({ product, onAddToCart }) => {
     </div>
   );
 };
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  }).isRequired,
+  onAddToCart: PropTypes.func.isRequired,
+  };
 
 export default ProductCard;

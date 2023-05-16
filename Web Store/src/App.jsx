@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
-import ProductsCatalog from "./ProductsCatalog/ProductsCatalog";
+import ProductsCatalog from "./Components/ProductsCatalog/ProductsCatalog";
 import Cart from "./Components/Cart/Cart";
 import PaymentePages from "./Components/PaymentPages/PaymentePages";
 import Footer from "./Components/Footer/Footer";
